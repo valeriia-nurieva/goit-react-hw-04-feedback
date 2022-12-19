@@ -14,11 +14,11 @@ const App = () => {
   const handleFeedback = type => {
     switch (type) {
       case 'good':
-        return setGood(good + 1);
+        return setGood(prevGood => prevGood + 1);
       case 'bad':
-        return setBad(bad + 1);
+        return setBad(prevBad => prevBad + 1);
       case 'neutral':
-        return setNeutral(neutral + 1);
+        return setNeutral(prevNeutral => prevNeutral + 1);
       default:
         throw new Error('Unexpected value of option');
     }
